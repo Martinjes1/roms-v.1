@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-17gws2_92+#^6^v2+6wn_-#40p=83aj7n2x^y47as&r*pt=66!'
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['roms-v1-production.up.railway.app','127.0.0.1','localhost']
 
