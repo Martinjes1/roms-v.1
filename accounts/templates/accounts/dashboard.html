@@ -1,0 +1,46 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{%  include 'accounts/status.html' %}
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+			<table class="table" id="myTable">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col"> Customer</th>
+						<th scope="col">Product</th>
+						<th scope="col">Date Orderd</th>
+						<th scope="col">Status</th>
+						<th scope="col">#</th>
+						
+					</tr>
+				</thead>
+				{% for order in orders %}
+				<tbody>
+					<tr>
+						<td class="c3">{{order.customer}}</td>
+						<td class="c3">{{order.product}}</td>
+						<td class="c3">{{order.date_created}}</td>
+						<td class="c3">{{order.status}}</td>
+						<td class="c3">
+							<a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}" title="Update"><i class="fa fa-edit"></i> </a>
+							
+							<a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}" title="Delete"><i class="fa fa-trash-o"></i></a>
+						</td>
+						
+
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+
+	
+</div>
+
+{% endblock %}

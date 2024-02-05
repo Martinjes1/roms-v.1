@@ -1,0 +1,35 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{%  include 'accounts/status.html' %}
+<br>
+<div class="row">
+	<div class="col-md-12">
+		<div class="card card-body">
+			<table class="table" id="myTable">
+				<thead class="thead-dark">
+					<tr>
+						<th> Customer</th>
+						<th scope="col">Product</th>
+						<th scope="col">Date Orderd</th>
+						<th scope="col">Status</th>
+						
+					</tr>
+				</thead>
+				{% for order in orders %}
+					<tr>
+						<td class="c3">{{order.customer}}</td>
+						<td class="c3">{{order.product}}</td>
+						<td class="c3">{{order.date_created}}</td>
+						<td class="c3">{{order.status}}</td>
+						
+					</tr>
+				{% endfor %}
+
+		
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

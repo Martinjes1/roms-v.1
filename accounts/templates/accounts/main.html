@@ -1,0 +1,51 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    {% if title %}
+	    	<title>Blog - {{ title }}</title>
+	    {% else %}
+	        <title> Home</title>
+	    {% endif %}
+	    
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<link rel="shortcut icon" type="image/png" href="{% static 'favicon/favicon-32x32.png' %}" alt='logo'>
+	  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href='{% static "/css/styles.css" %}'>
+		<link rel="stylesheet" type="text/css" href='{% static "datatables/datatables.css" %}'>
+		<link rel="stylesheet" type="text/css" href='{% static "datatables/datatables.min.css" %}'>
+		<link href="{% static 'css/font-face.css' %}" rel="stylesheet" media="all">
+		<link href="{% static 'vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
+	    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+	  	
+	</head>
+	<body>
+		{%  include 'accounts/navbar.html' %}
+		<div class="container-fluid">
+			{% block content %}
+			{% endblock %}
+	    </div>
+		<hr>
+	<footer class="footer">
+		<div class="footer__block block no-margin-bottom">
+			<div class="container-fluid text-center ">
+				<!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+			<p class="no-margin-bottom"> ROMS.&copy; 2021 Design by <b>Marmen &#128512;</b></p>
+			</div>
+		</div>
+	</footer>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" charset="utf8" src='{% static "datatables/datatables.js" %}'></script>
+	<script type="text/javascript" charset="utf8" src='{% static "datatables/datatables.min.js" %}'></script>
+	<script type="text/javascript">
+	    $(document).ready( function () {
+	    $('#myTable').DataTable();
+		} );
+	</script>
+</html>

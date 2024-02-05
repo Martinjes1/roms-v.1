@@ -1,0 +1,39 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div class="row">
+	
+		<div class="col-md-7">
+			<div class="card">
+				<div class="card-header text-primary" ><center>Customer Form</center></div>
+				<div class="card card-body card-block ">
+					
+					<form action="" method="POST">
+						{% csrf_token %}
+
+						
+						<div class="form-group">
+							<input class="form-control" type="text" name="name" placeholder="Customer Name" required>
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="text" name="phone" placeholder="Phone Number" required>
+						</div>
+						<div class="form-group">
+							<input class="form-control" type="email" name="email" placeholder="Email Address" required>
+						</div>
+						
+						<div class="col-sm-2">
+							<button class="btn btn-primary form-control" type="submit"><i class="fa fa-save"></i> Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	
+</div>
+
+
+{% endblock %}

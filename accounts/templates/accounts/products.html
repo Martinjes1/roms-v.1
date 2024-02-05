@@ -1,0 +1,46 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+		<div class="row">
+			<div class="col-md">
+				<div class="card-header text-center">
+					<center><h3 class="text-dark">All Products</h3></center>
+					
+				</div>
+				<div class="card card-body">
+					<div class="col-sm-2">
+						<a class="btn btn-outline-primary  btn-sm btn-block" href="{% url 'add_products'  %}"><i class="fa fa-plus"></i> Add Products</a>
+					</div>
+					
+					<br>
+					
+					<table class="table" id="myTable">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">Product</th>
+								<th scope="col">Category</th>
+								<th scope="col">Price [$]</th>
+								<th scope="col">Date Registered</th>
+								<th>#</th>
+							</tr>
+						</thead>
+						{% for i in products %}
+							<tr>
+								<td class="c3">{{i.name}}</td>
+								<td class="c3">{{i.category}}</td>
+								<td class="c3">{{i.price}}</td>
+								<td class="c3">{{i.date_created}}</td>
+								<td class="c3">
+									
+								</td>
+							</tr>
+						{% endfor %}
+						
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}

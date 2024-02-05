@@ -1,0 +1,67 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Name: {{customer.name}}</p>
+			<p>Email: {{customer.email}}</p>
+			<p>Phone: {{customer.phone}}</p>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Total Orders</h5>
+			<hr>
+			<h1 style="text-align: center;padding: 10px">{{order_count}}</h1>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<div class="col-sm-2">
+				<a class="btn btn-outline-primary  btn-sm btn-block" href="{% url 'create_order' customer.id %}"><i class="fa fa-plus"></i> Add Order</a>
+			</div>
+			<hr>
+			<table class="table table-sm" id="myTable">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Product</th>
+						<th scope="col">Category</th>
+						<th scope="col">Date Orderd</th>
+						<th scope="col">Status</th>
+						<th scope="col">#</th>
+						<th scope="col">#</th>
+					</tr>
+				</thead>	
+				{% for order in orders %}
+
+				<tr>
+					<td class="c3">{{order.product}}</td>
+					<td class="c3">{{order.product.category}}</td>
+					<td class="c3">{{order.date_created}}</td>
+					<td class="c3">{{order.status}}</td>
+					<td class="c3"><a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}" title="Update"><i class="fa fa-edit"></i></a></td>
+					<td class="c3"><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}" title="Delete"><i class="fa fa-trash-o"></i></a></td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

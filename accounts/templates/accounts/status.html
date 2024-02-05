@@ -1,0 +1,83 @@
+{% load static %}
+
+<style>
+	#logo{
+		margin-right: 5px;
+	}
+	
+	body{
+		background-color: #ebeff5;
+	}
+	
+	
+	#total-orders{
+		background-color: #16c8e7;
+	}
+	
+	
+	#orders-delivered{
+		background-color: #557ef1;
+	}
+	
+	#orders-pending{
+		background-color: #7281da;
+	}
+	
+	#out-delivery{
+		background-color: #7a99f0;
+	}
+</style>
+<br>
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title  text-white  ">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_orders}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title  text-white  ">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title ">{{delivered}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title text-white   ">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{pending}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="out-delivery">
+			  	<div class="card-header">
+			  		<h5 class="card-title text-white  ">Out For Delivery</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{outof_delivery}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>

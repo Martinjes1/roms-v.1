@@ -1,0 +1,51 @@
+  {% extends 'accounts/main.html' %} 
+ {% load static  %}
+
+ {% block content %}
+   
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-header text-center">
+                <center><h3 class="text-dark">All Customer</h3></center>
+            </div>
+            <div class="card card-body">
+                <div class="col-sm-2">
+                    <a class="btn btn-outline-primary  btn-sm btn-block" href=" {% url 'create_customer' %} "><i class="fa fa-plus"></i> Add Customer</a>
+                </div>
+                <hr>
+                <table class="table table-sm" id="myTable">
+                    <thead class="thead-dark">
+                        <tr>
+                            
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Date Registered</th>
+                            <th></th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    {% for customer in customers %}
+                        <tr>
+                            
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.phone}}</td>
+                            <td>{{customer.email}}</td>
+                            <td>{{customer.date_created}}</td>
+                            <td><a class="btn btn-sm btn-info " href="{% url 'customer' customer.id %}" title="Detail"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <a class="btn btn-outline-info  " href="{% url 'update_customer' customer.id %}" title="Update"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-outline-danger  " href="{% url 'delete_customer' customer.id %}" title="Delete"><i class="fa fa-trash"></i></a>
+                            </td>
+                            
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+     
+{% endblock content %}

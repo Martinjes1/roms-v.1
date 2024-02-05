@@ -1,0 +1,42 @@
+{% extends 'accounts/main.html' %} 
+{% load static  %}
+
+{% block content %}
+<div class="row">
+   <div class="col-md">
+        <div class="card card-body">
+            <center><h5>All Customer</h5></center>
+            
+        </div>
+        <div class="card card-body">
+        
+            <table class="table" id="myTable">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th>Customer</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Date Registered</th>
+                        
+                        
+                    </tr>
+                </thead>
+                {% for customer in customers %}
+                    <tr>
+                        
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.phone}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.date_created}}</td>
+                    
+                        
+                        
+                    </tr>
+                {% endfor %}
+
+            </table>
+       </div>
+   </div>
+</div>   
+{% endblock content %}

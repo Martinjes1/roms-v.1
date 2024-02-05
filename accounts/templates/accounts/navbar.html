@@ -1,0 +1,83 @@
+{% load static %}
+<style>
+  #hello-msg{
+    font-size: 15px;
+    color: #fff;
+    margin-right: 20px;
+  }
+  #img {
+    width: 100px;
+    border-radius: 5%;
+  }
+
+ 
+ 
+
+  #logout{
+    background-color: rgb(236, 25, 60);
+    margin: auto;
+    color: #fff;
+    border-style: double;
+    margin-bottom: 2px;
+
+  }
+
+  li{
+    margin-left: 3px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <img id="img" src="{% static 'images/django.png' %}" alt="Django Logo">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul id="button_menu" class="navbar-nav">
+      <li class="nav-item ">
+        <a  class="nav-link btn btn-outline-primary" href="{% url 'home' %}">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link btn btn-outline-primary" href="{% url 'products' %}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link btn btn-outline-primary" href="{% url 'allcustomer' %}">Customer</a>
+      </li>
+    </ul>
+  </div>
+  {% if user.is_authenticated %}
+    <span id="hello-msg">Hello, <b>{{request.user}}</b></span>
+    <span><a  class="hello-msg btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></span>
+  {% else %}
+    <span><a class="hello-msg btn btn-outline-success" href="{% url 'login' %}">Login</a></span>
+  {% endif %}
+</nav>
+<hr color="dark">
+
+<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <img id="img" src="{% static 'images/django.png' %}">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products' %}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'allcustomer' %}">Customer</a>
+      </li>   
+      
+    </ul>
+  </div>
+  {% if user.is_authenticated %}
+  <span id="hello-msg">Hello, <b>{{request.user}}</b></span>
+  <span><a  class="hello-msg btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></span>
+  {% else %}
+  <span><a class="hello-msg btn btn-outline-primary" href="{% url 'login' %}">Login</a></span>
+  {% endif %}  
+</nav>
+<hr color="dark"> -->
