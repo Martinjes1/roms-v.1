@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['roms-v1-production.up.railway.app','127.0.0.1','localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://roms-v1-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://roms-v1-production.up.railway.app']
 
 # Application definition
 
