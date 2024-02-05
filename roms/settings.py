@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-17gws2_92+#^6^v2+6wn_-#40p=83aj7n2x^y47as&r*pt=66!
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['roms-v1-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
